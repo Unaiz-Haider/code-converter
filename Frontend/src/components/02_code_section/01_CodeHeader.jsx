@@ -6,7 +6,7 @@ function Header() {
                 <h1 className='text-4xl text-gray-400'>
                     AI powered
                 </h1>
-                <h1 className='text-6xl text-white'>
+                <h1 className='text-6xl bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent'>
                     Code Translator App
                 </h1>
             </div>

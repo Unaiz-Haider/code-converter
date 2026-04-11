@@ -7,7 +7,7 @@ function FooterSection() {
             {/* top border accent */}
             <div className="w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />
 
-            <div className="flex flex-col items-center py-8 px- gap-4">
+            <div className="flex flex-col items-center py-8 px- gap-4 ">
 
                 {/* logo / brand */}
                 <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -53,7 +53,7 @@ function FooterSection() {
                 <div className="w-full h-[0.5px] bg-gray-700" />
 
                 {/* bottom */}
-                <div className="flex justify-between w-full text-gray-500 text-sm">
+                <div className="flex flex-col items-center w-full text-gray-500 text-sm">
                     <span>© 2025 Code Converter. All rights reserved.</span>
                     <span>@UnaizHaider</span>
                 </div>

@@ -4,7 +4,7 @@ function Hero() {
             <div className='flex flex-col items-center justify-center min-h-screen w-full bg-gray-900'>
                 <div className="flex justify-between w-full px-12">
                     <div className='flex flex-col justify-center'>
-                        <h1 className='text-8xl text-white mb-6 w-6/7'>
+                        <h1 className='text-8xl  mb-6 w-6/7 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent'>
                             Code Converter using Gen-AI
                         </h1>
                         <p className='text-gray-400 text-4xl w-150 text-center'>
