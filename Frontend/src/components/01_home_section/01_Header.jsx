@@ -24,9 +24,9 @@ function Header() {
                         alt="LinkedIn Profile"
                         className="w-14 h-14 rounded-full object-cover object-[50%_20%] cursor-pointer hover:scale-110 transition"
                     />
-                    
-                    
+                      
                 </a>
+                
             </div>
 
             {/* Gradient line */}
