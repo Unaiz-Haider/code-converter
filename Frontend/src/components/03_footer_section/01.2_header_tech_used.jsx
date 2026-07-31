@@ -104,31 +104,6 @@ function Header() {
                         </div>
 
 
-                        {/* <div className='flex justify-center gap-4'>
-
-                            <div className='rounded overflow-hidden w-16 shadow-md hover:scale-110 transition duration-300'>
-                                <h1 className='text-6xl w-full h-16 text-center text-[#ffffff] bg-[#47A248]'>
-                                    M
-                                </h1>
-                                <img className='w-full h-16 p-2 bg-white' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="" />
-                            </div>
-                            <div className='rounded overflow-hidden shadow-md hover:scale-110 transition duration-300'>
-                                <h1 className='text-6xl w-full h-16 text-center text-[#ffffff] bg-black'>
-                                    E
-                                </h1>
-                                <img className='w-full h-16 p-2 bg-white' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="" />
-                            </div>
-                            <div className='rounded overflow-hidden shadow-md hover:scale-110 transition duration-300'>
-                                <h1 className='text-6xl w-full h-16 text-center text-white bg-[#61DAFB]'>
-                                    R
-                                </h1>
-                                <img className='w-full h-16 p-2 bg-white' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="ReactJs" />
-                            </div>
-                            <div className='rounded overflow-hidden shadow-md hover:scale-110 transition duration-300'>
-                                <h1 className='text-6xl w-full h-16 text-center text-white bg-[#339933]'>N</h1>
-                                <img className='w-full h-16 p-2 bg-white' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" />
-                            </div>
-                        </div> */}
 
 
                         <div className="flex items-center gap-4 px-6 py-3 bg-black rounded-full shadow-lg hover:scale-105 transition">
