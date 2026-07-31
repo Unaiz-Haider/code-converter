@@ -1,15 +1,15 @@
 import React from 'react'
 import Header from './01_CodeHeader'
-import Hero from './02_CodeHero'  
+import Hero from './02_CodeHero'
 
 
-function CodeApplication(){
-    return(
+function CodeApplication() {
+    return (
         <>
-        <div className='code-app-page h-screen flex flex-col'>
+            <div className='code-app-page h-screen flex flex-col'>
                 <Header />
                 <Hero />
-        </div>
+            </div>
         </>
     )
 }
