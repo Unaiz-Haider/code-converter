@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import CodeInput from './03_CodeInput.jsx'
 import CodeOutput from './04_CodeOutput.jsx'
 
 
 function Hero() {
-    const [outputLang, setOutputLang] = useState('cpp')
+    const [inputLang, setInputLang] = useState("python");
+    const [outputLang, setOutputLang] = useState('cpp');
     const [outputCode, setOutputCode] = useState('')   // ✅ added
+    const [displayedCode, setDisplayedCode] = useState('');
     const [loading, setLoading] = useState(false)
 
-    async function handleConvert(inputCode, fromLang) {
+    async function handleConvert(inputCode  /* fromLang */) {
         try {
             setLoading(true)
 
@@ -19,15 +21,18 @@ function Hero() {
                 },
                 body: JSON.stringify({
                     code: inputCode,
-                    fromLang: fromLang,
+                    // fromLang: fromLang,
                     toLang: outputLang
                 })
             })
 
             const data = await response.json()
 
+            console.log(data);
+
             if (data.output) {
                 setOutputCode(data.output)
+                setInputLang(data.detectedLanguage);
             } else {
                 console.log("Error:", data.error)
             }
@@ -39,6 +44,30 @@ function Hero() {
         }
     }
 
+    useEffect(() => {
+        if (!outputCode) {
+            setDisplayedCode("");
+            return;
+        }
+
+        setDisplayedCode("");
+
+        let index = 0;
+
+        const interval = setInterval(() => {
+            setDisplayedCode(outputCode.slice(0, index + 1));
+            index++;
+
+            if (index >= outputCode.length) {
+                clearInterval(interval);
+            }
+        }, 5); // Adjust speed here
+
+        return () => clearInterval(interval);
+
+    }, [outputCode]);
+
+    
     return (
         <>
             <div className='flex justify-center items-center bg-gray-900'>
@@ -47,10 +76,11 @@ function Hero() {
                     <CodeInput
                         onConvert={handleConvert}
                         loading={loading}
+                        inputLang={inputLang}
                     />
 
                     <CodeOutput
-                        outputCode={outputCode}
+                        outputCode={displayedCode}
                         selectedLang={outputLang}
                         setSelectedLang={setOutputLang}
                     />
