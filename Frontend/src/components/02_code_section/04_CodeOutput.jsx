@@ -37,10 +37,6 @@ function CodeOutput({ outputCode, selectedLang, setSelectedLang }) {
                 />
             </div>
 
-            {/* Language Info */}
-            {/* <p className="text-sm text-gray-400">
-                Output: <span className="text-blue-400 font-medium">{selectedLang}</span>
-            </p> */}
 
             {/* Code Box */}
             <div className="relative w-[40vw] h-[60vh] 
