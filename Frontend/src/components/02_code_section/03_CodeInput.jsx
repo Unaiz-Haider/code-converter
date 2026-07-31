@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import CodeLangSelect from './02.1_CodeLangSelect.jsx'
 
-function CodeInput({ onConvert, loading, inputLang }) {
+function CodeInput({ handleConvert, loading, inputLang }) {
     const [selectedLang, setSelectedLang] = useState('python')
     const [inputCode, setInputCode] = useState('')
 
@@ -13,9 +13,10 @@ function CodeInput({ onConvert, loading, inputLang }) {
         }
     }, [inputLang])
 
+
     function handleTranslate() {
         if (!inputCode.trim()) return
-        onConvert(inputCode /* , selectedLang */)
+        handleConvert(inputCode /* , selectedLang */)
     }
 
 
