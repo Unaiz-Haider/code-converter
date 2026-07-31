@@ -61,7 +61,7 @@ function Hero() {
             if (index >= outputCode.length) {
                 clearInterval(interval);
             }
-        }, 5); // Adjust speed here
+        }, 5);
 
         return () => clearInterval(interval);
 
