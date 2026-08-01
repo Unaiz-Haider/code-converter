@@ -1,11 +1,8 @@
-// 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   openROuter
-
-
-
+require(dotenv).config();
 
 const fetch = require("node-fetch");
 
-const API_KEY = "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";
+const API_KEY = process.env.OPENROUTER_API_KEY;
 
 async function run() {
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
