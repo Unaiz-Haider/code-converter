@@ -12,3 +12,23 @@
     animation: marquee 15s linear infinite;
 }
 
+
+/* Chrome, Edge, Safari */
+
+textarea::-webkit-scrollbar {
+    width: 6px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: #4b5563; /* gray-600 */
+    border-radius: 2px;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+    background: #6b7280; /* gray-500 */
+}
+

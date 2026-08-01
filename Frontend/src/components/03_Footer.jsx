@@ -10,8 +10,6 @@ function Footer() {
                 {/* <TechMarquee /> */}
                 <Header />
                 <FooterSection />
-                <div>
-                </div>
             </div>
         </>
     )
