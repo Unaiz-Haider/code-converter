@@ -96,6 +96,8 @@ app.post("/convert", async (req, res) => {
       output,
     });
 
+    console.log("Detected Language:", fromLang);
+
   } catch (err) {
     console.error(err);
 
