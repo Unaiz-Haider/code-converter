@@ -55,7 +55,7 @@ function CodeInput({ handleConvert, loading, inputLang }) {
                     disabled={loading}
                     className="absolute bottom-4 right-8 px-5 py-2 rounded-lg 
                     text-white bg-gradient-to-r from-blue-500 to-purple-500 
-                    hover:scale-105 active:scale-95 transition shadow-md">
+                    cursor-pointer hover:scale-105 active:scale-95 transition shadow-md">
                     {loading ? 'Translating...' : 'Translate'}
                 </button>
             </div>
