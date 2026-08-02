@@ -28,11 +28,12 @@ function Hero() {
 
             const data = await response.json()
 
-            console.log(data);
+            // console.log(data);
 
             if (data.output) {
                 setOutputCode(data.output)
                 setInputLang(data.detectedLanguage);
+                console.log("Detected Language:", data.detectedLanguage)
             } else {
                 console.log("Error:", data.error)
             }
@@ -74,7 +75,7 @@ function Hero() {
                 <div className='code-section flex justify-between w-[85vw] h-[65vh]'>
 
                     <CodeInput
-                        onConvert={handleConvert}
+                        handleConvert={handleConvert}
                         loading={loading}
                         inputLang={inputLang}
                     />
