@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import CodeLangSelect from './02.1_CodeLangSelect.jsx'
+import Editor from "@monaco-editor/react";
 
 function CodeInput({ handleConvert, loading, inputLang }) {
     const [selectedLang, setSelectedLang] = useState('python')
@@ -46,7 +47,7 @@ function CodeInput({ handleConvert, loading, inputLang }) {
                     spellCheck={false}
                     className='w-full h-full p-4 pr-4 bg-transparent text-white 
                     resize-none font-mono text-sm focus:outline-none placeholder-gray-400'
-                    placeholder='// Enter your code here...'
+                    placeholder='Enter your code here...'
                 />
 
                 {/* Button */}

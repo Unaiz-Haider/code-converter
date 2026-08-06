@@ -54,7 +54,7 @@ function TechCard({ title, color, techs }) {
 function ModelBenefitCard({ title, benefit, color }){
     return (
         <>
-        
+
         </>
     )
 }
@@ -82,7 +82,7 @@ function Header() {
                 </div>
 
 
-                <div className='flex justify-center gap-20 w-full border'>
+                <div className='flex justify-center gap-20 w-full'>
 
                     <div className='flex flex-col items-center justify-center gap-6 min-h-full w-1/3 border border-gray-600 rounded-lg bg-white/10'>
 
