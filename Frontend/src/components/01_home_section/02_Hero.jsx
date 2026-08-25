@@ -1,9 +1,10 @@
 function Hero() {
     return (
         <>
-            <div className='flex flex-col items-center justify-center min-h-screen w-full bg-gray-900'>
+            <div className='flex items-center justify-center min-h-screen w-full bg-gray-900'>
 
                 <div className="flex justify-between w-full px-12">
+                    
                     <div className='flex flex-col justify-center'>
                         <h1 className='text-8xl font-semibold mb-6 w-6/7 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent'>
                             Code Converter using Gen-AI
@@ -18,14 +19,17 @@ function Hero() {
                             Demo video playing of the working app
                         </h1>
                     </div>
+
                 </div>
 
-                <div className='flex justify-center p-[4px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-lg relative top-20'>
-                    <h1 className='text-4xl text-white p-2 rounded-lg cursor-pointer bg-gray-700'>
-                        Try out our converter
-                    </h1>
-                </div>
-                
+                {/* <div className='flex justify-center relative top-20'>
+                    <div className='p-[2px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-lg'>
+                        <h1 className='text-3xl font-semibold text-white px-6 py-3 rounded-lg bg-gray-800 cursor-pointer hover:bg-gray-700 transition duration-300'>
+                            Try out our converter →
+                        </h1>
+                    </div>
+                </div> */}
+
             </div>
         </>
     )
