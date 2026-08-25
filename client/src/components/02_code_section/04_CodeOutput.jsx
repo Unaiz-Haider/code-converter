@@ -49,6 +49,7 @@ function CodeOutput({ outputCode, selectedLang, setSelectedLang }) {
 
                 {outputCode ? (
                     <SyntaxHighlighter
+                        className = 'text-lg'
                         language={selectedLang}
                         style={vscDarkPlus}
                         showLineNumbers={true}
@@ -62,7 +63,7 @@ function CodeOutput({ outputCode, selectedLang, setSelectedLang }) {
                             background: "transparent",    // bg-transparent
                             color: "#ffffff",             // text-white
                             fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace", // font-mono
-                            fontSize: "",         // text-sm (14px)
+                            // fontSize: "text-xl",         // text-sm (14px)
                             lineHeight: "1.25rem",        // default Tailwind text-sm line height
                             overflowX: "hidden",
                             whiteSpace: "pre-wrap",
@@ -83,10 +84,11 @@ function CodeOutput({ outputCode, selectedLang, setSelectedLang }) {
                 < button
                     onClick={handleCopy}
                     disabled={!outputCode}
-                    className="absolute top-4 right-8 px-4 py-2 rounded-lg
-                text-white bg-gradient-to-r from-green-500 to-emerald-500 cursor-pointer
-                hover:scale-105 active:scale-95 transition shadow-md 
-                    disabled:opacity-40 disabled:cursor-not-allowed">
+                    className="absolute bottom-4 right-8 px-4 py-2 rounded-lg
+                        text-white bg-gradient-to-r from-green-500 to-emerald-500 cursor-pointer
+                        hover:scale-105 active:scale-95 transition shadow-md 
+                        disabled:opacity-40 disabled:cursor-not-allowed"
+                    >
                     Copy
                 </button>
 
