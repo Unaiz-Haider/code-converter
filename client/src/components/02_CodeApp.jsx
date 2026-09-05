@@ -7,7 +7,7 @@ import CodeApplication from './02_code_section/CodeApp'
 function CodeApp() {
     return (
         <>
-            <div className='code-app-page h-screen flex flex-col bg-gray-900'>
+            <div className='code-app-page min-h-screen flex flex-col bg-gray-900'>
                 <CodeApplication />
             </div>
         </>
