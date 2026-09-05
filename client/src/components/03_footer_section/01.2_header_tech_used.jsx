@@ -9,10 +9,9 @@ function TechCard({ title, color, techs }) {
 
                 <h1 className={`text-lg font-semibold ${color}`}>
                     {title}
-
                 </h1>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 flex-wrap">
 
                     {techs.map((tech, index) => (
                         <React.Fragment key={index}>
@@ -49,13 +48,13 @@ function Header() {
         <>
             <div className='flex flex-col justify-evenly w-full min-h-screen mb-14'>
 
-                <div className="text-center flex flex-col items-center gap-5 mb-8">
+                <div className="text-center flex flex-col items-center gap-5 mb-8 px-4">
 
-                    <h1 className="text-6xl md:text-7xl font-semibold tracking-tight bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                         How It's Built
                     </h1>
 
-                    <p className="max-w-3xl text-lg md:text-xl text-gray-300 leading-8">
+                    <p className="max-w-3xl text-base sm:text-lg md:text-xl text-gray-300 leading-7 md:leading-8">
                         Discover the modern technologies and AI workflow that power this
                         intelligent code conversion platform—from the MERN stack to
                         <span className="font-semibold text-white"> GPT-4o mini</span>
@@ -66,17 +65,17 @@ function Header() {
                 </div>
 
 
-                <div className='flex justify-center gap-20 w-full'>
+                <div className='flex flex-col lg:flex-row justify-center gap-8 lg:gap-20 w-full px-4 sm:px-6 lg:px-0'>
 
-                    <div className='flex flex-col gap-6 min-h-full w-1/3 border border-gray-600 rounded-lg bg-white/10 py-6'>
+                    <div className='flex flex-col gap-6 min-h-full w-full lg:w-1/3 border border-gray-600 rounded-lg bg-white/10 py-6'>
 
-                        <div className='text-3xl font-bold self-start pl-10'>
-                            <span className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        <div className='text-2xl sm:text-3xl font-bold self-start pl-6 sm:pl-10'>
+                            <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                                 Tech Stack
                             </span>
                         </div>
 
-                        <div className="w-full px-10 flex flex-col gap-6">
+                        <div className="w-full px-5 sm:px-8 lg:px-10 flex flex-col gap-6">
 
                             <TechCard
                                 title="Frontend"
@@ -150,16 +149,18 @@ function Header() {
                     </div>
 
 
-                    <div className="w-1/3 min-h-full rounded-2xl border border-white/20 bg-white/10 backdrop-blur-lg p-8 flex flex-col gap-6 text-white">
+                    <div className="w-full lg:w-1/3 min-h-full rounded-2xl border border-white/20 bg-white/10 backdrop-blur-lg p-5 sm:p-6 lg:p-8 flex flex-col gap-6 text-white">
 
-                        <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                             AI Model Used
+                        <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                            AI Model Used
                         </h1>
 
-                        <div className="flex items-center justify-between rounded-xl bg-gray-900/70 px-5 py-4">
+                        <div className="flex items-center justify-between rounded-xl bg-gray-900/70 px-4 sm:px-5 py-4">
+
                             <div>
                                 <p className="text-gray-400 text-sm">Model</p>
-                                <h2 className="text-2xl font-bold">
+
+                                <h2 className="text-xl sm:text-2xl font-bold">
                                     GPT-4o-mini
                                 </h2>
                             </div>
@@ -168,11 +169,13 @@ function Header() {
                                 <img
                                     src={OpenAI}
                                     alt="OpenAI"
-                                    className='w-8 h-8' />
+                                    className='w-8 h-8'
+                                />
                             </div>
+
                         </div>
 
-                        <p className="text-gray-300 leading-8">
+                        <p className="text-gray-300 leading-7 md:leading-8">
                             GPT-4o mini powers the AI engine behind this project.
                             It automatically detects the programming language,
                             understands the code structure, and converts it into
@@ -181,7 +184,7 @@ function Header() {
                         </p>
 
 
-                        <div className="grid grid-cols-2 relative top-6 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 relative top-6 gap-4">
 
                             <div className="rounded-xl transition-all duration-300 b-white/10 p-4 bg-blue-500/20 hover:bg-blue-500/40 hover:scale-[1.02]">
                                 <p className="text-gray-400 text-sm">Latency </p>
@@ -198,7 +201,7 @@ function Header() {
                                 <h1 className="text-xl font-bold">50+ Languages</h1>
                             </div>
 
-                            <div className="rounded-xl transition-all duration-300  b-white/10 p-4 bg-pink-500/20 hover:bg-pink-500/40 hover:scale-[1.02]">
+                            <div className="rounded-xl transition-all duration-300 b-white/10 p-4 bg-pink-500/20 hover:bg-pink-500/40 hover:scale-[1.02]">
                                 <p className="text-gray-400 text-sm">Accuracy</p>
                                 <h1 className="text-xl font-bold">High</h1>
                             </div>
