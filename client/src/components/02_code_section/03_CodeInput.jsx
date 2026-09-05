@@ -22,11 +22,11 @@ function CodeInput({ handleConvert, loading, inputLang }) {
 
 
     return (
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 w-full lg:w-auto">
 
             {/* Header */}
-            <div className="flex items-center justify-between">
-                <h1 className='font-semibold text-white text-lg tracking-wide'>
+            <div className="flex items-center justify-between w-full">
+                <h1 className="font-semibold text-white text-lg tracking-wide">
                     From
                 </h1>
 
@@ -37,28 +37,59 @@ function CodeInput({ handleConvert, loading, inputLang }) {
             </div>
 
             {/* Code Box */}
-            <div className="relative w-[40vw] h-[60vh] 
-                rounded-xl overflow-hidden border border-white/20 
-                bg-gray-900/80 backdrop-blur-md shadow-lg">
+            <div className="
+                relative
+                w-full lg:w-[40vw]
+                h-[55vh] lg:h-[60vh]
+                rounded-xl
+                overflow-hidden
+                border border-white/20
+                bg-gray-900/80
+                backdrop-blur-md
+                shadow-lg
+            ">
 
                 <textarea
                     value={inputCode}
                     onChange={(e) => setInputCode(e.target.value)}
                     spellCheck={false}
-                    className='w-full h-full p-4 pr-4 bg-transparent text-white 
-                    resize-none font-mono text-sm focus:outline-none placeholder-gray-400'
-                    placeholder='Enter your code here...'
+                    className="
+                        w-full h-full
+                        p-4 pr-4
+                        bg-transparent
+                        text-white
+                        resize-none
+                        font-mono text-sm
+                        focus:outline-none
+                        placeholder-gray-400
+                    "
+                    placeholder="Enter your code here..."
                 />
 
                 {/* Button */}
                 <button
                     onClick={handleTranslate}
                     disabled={loading}
-                    className="absolute bottom-4 right-8 px-5 py-2 rounded-lg 
-                    text-white bg-gradient-to-r from-blue-500 to-purple-500 
-                    cursor-pointer hover:scale-105 active:scale-95 transition shadow-md">
+                    className="
+                        absolute
+                        bottom-4
+                        right-4 sm:right-6 lg:right-8
+                        px-4 sm:px-5
+                        py-2
+                        rounded-lg
+                        text-white
+                        bg-gradient-to-r from-blue-500 to-purple-500
+                        cursor-pointer
+                        hover:scale-105
+                        active:scale-95
+                        transition
+                        shadow-md
+                        text-sm sm:text-base
+                    "
+                >
                     {loading ? 'Translating...' : 'Translate'}
                 </button>
+
             </div>
 
         </div>
