@@ -68,11 +68,12 @@ function Hero() {
 
     }, [outputCode]);
 
-    
+
     return (
         <>
-            <div className='flex justify-center items-center bg-gray-900'>
-                <div className='code-section flex justify-between w-[85vw] h-[65vh]'>
+            <div className='flex justify-center items-center bg-gray-900 py-10 lg:py-0 min-h-fit'>
+
+                <div className='code-section flex flex-col lg:flex-row justify-between w-[92vw] sm:w-[90vw] lg:w-[85vw] h-auto lg:h-[65vh] gap-16 sm:gap-12 lg:gap-0'>
 
                     <CodeInput
                         handleConvert={handleConvert}
@@ -87,6 +88,7 @@ function Hero() {
                     />
 
                 </div>
+
             </div>
         </>
     )
