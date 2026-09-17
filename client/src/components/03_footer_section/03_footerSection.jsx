@@ -20,11 +20,20 @@ function FooterSection() {
                     {/* contact */}
                     <div className="flex flex-col gap-3 items-start">
                         <h2 className="text-lg font-semibold text-white border-b border-blue-500 pb-1 w-full">Contact</h2>
-                        {['LinkedIn', 'Portfolio', 'GitHub', 'Gmail', 'LeetCode'].map((item) => (
-                            <span key={item} className="text-gray-400 hover:text-white cursor-pointer transition">
-                                {item}
-                            </span>
-                        ))}
+                        {[
+                            { name: 'LinkedIn', url: 'https://www.linkedin.com/in/unaiz-haider-126409290/'}, 
+                            { name: 'Portfolio', url: ''}, 
+                            { name: 'Gmail', url: 'mailto:unaizhaider11072@gmail.com'}
+                        ].map((item) => (
+                                <a 
+                                    key = {item.name}
+                                    href = {item.url}
+                                    target = {item.name ===  'Gmail' ? '_self' : '_blank'} 
+                                    rel="noopener noreferrer"
+                                    className="text-gray-400 hover:text-white cursor-pointer transition">
+                                    {item.name}
+                                </a>
+                            ))}
                     </div>
 
                     {/* pages */}
