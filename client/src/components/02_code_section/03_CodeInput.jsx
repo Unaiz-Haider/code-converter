@@ -87,7 +87,7 @@ function CodeInput({ handleConvert, loading, inputLang }) {
                         text-sm sm:text-base
                     "
                 >
-                    {loading ? 'Translating...' : 'Translate'}
+                    {loading ? 'Converting...' : 'Convert'}
                 </button>
 
             </div>
