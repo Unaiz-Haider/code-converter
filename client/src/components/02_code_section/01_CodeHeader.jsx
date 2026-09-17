@@ -20,7 +20,7 @@ function Header() {
                     text-center
                     bg-gradient-to-r from-blue-400 to-purple-400
                     bg-clip-text text-transparent">
-                    Code Translator App
+                    Code Converter App
                 </h1>
 
             </div>
