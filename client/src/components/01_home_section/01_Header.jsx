@@ -2,7 +2,7 @@ import profilePic from "../../assets/linkedin_picture.jpg";
 
 function Header() {
     return (
-        <div className="relative bg-gray-950">
+        <div id="home" className="relative bg-gray-950">
             <div className="flex justify-between items-center
                 px-6 sm:px-10 md:px-30
                 py-5

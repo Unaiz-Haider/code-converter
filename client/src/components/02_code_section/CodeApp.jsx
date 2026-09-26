@@ -6,7 +6,7 @@ import Hero from './02_CodeHero'
 function CodeApplication() {
     return (
         <>
-            <div className='code-app-page flex flex-col'>
+            <div id="converter" className='code-app-page flex flex-col'>
                 <Header />
                 <Hero />
             </div>

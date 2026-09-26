@@ -45,7 +45,7 @@ function ModelBenefitCard({ title, benefit, color }) {
 
 function Header() {
     return (
-            <div className='flex flex-col justify-evenly w-full min-h-fit mb-14'>
+            <div id='about' className='flex flex-col justify-evenly w-full min-h-fit mb-14'>
 
                 <div className="text-center flex flex-col items-center gap-5 mb-8 px-4">
 
