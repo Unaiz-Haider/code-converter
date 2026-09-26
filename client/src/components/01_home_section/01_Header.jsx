@@ -22,7 +22,7 @@ function Header() {
                     <a href="#converter" className="text-gray-300 text-sm sm:text-base hover:text-white transition-colors">
                         Converter
                     </a>
-                    <a href="#how-it-works" className="text-gray-300 text-sm sm:text-base hover:text-white transition-colors">
+                    <a href="#about" className="text-gray-300 text-sm sm:text-base hover:text-white transition-colors">
                         How It's Built
                     </a>
                 </nav>
