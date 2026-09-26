@@ -3,10 +3,10 @@ import profilePic from "../../assets/linkedin_picture.jpg";
 function Header() {
     return (
         <div id="home" className="relative bg-gray-950">
-            <div className="flex justify-between items-center
-                px-6 sm:px-10 md:px-30
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0
+                px-5 sm:px-8 md:px-12 lg:px-20 xl:px-28
                 py-5
-                bg-gray-950 z-2">
+                bg-gray-950 z-20">
 
                 {/* Logo / Title */}
                 <h1 className="text-xl sm:text-2xl
@@ -18,18 +18,18 @@ function Header() {
                 </h1>
 
                 {/* Nav Links */}
-                <nav className="flex items-center gap-8">
-                    <a href="#converter" className="text-gray-300 text-sm sm:text-base hover:text-white transition-colors">
+                <nav className="flex items-center gap-4 sm:gap-6 md:gap-8">
+                    <a href="#converter" className="text-gray-300 text-xs sm:text-sm md:text-base hover:text-white transition-colors">
                         Converter
                     </a>
-                    <a href="#about" className="text-gray-300 text-sm sm:text-base hover:text-white transition-colors">
+                    <a href="#about" className="text-gray-300 text-xs sm:text-sm md:text-base hover:text-white transition-colors">
                         How It's Built
                     </a>
                     <a
                         href="https://www.linkedin.com/in/unaiz-haider-126409290/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-300 text-sm sm:text-base hover:text-white transition-colors cursor-pointer"
+                        className="text-gray-300 text-xs sm:text-sm md:text-base hover:text-white transition-colors cursor-pointer"
                     >
                         LinkedIn
                     </a>
