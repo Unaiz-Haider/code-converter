@@ -60,12 +60,6 @@ function Hero() {
                     playsInline
                 />
 
-                {isPlaying && (
-                    <h1 className = 'absolute top-6 sm:top-8 text-xl sm:text-2xl text-center text-white pointer-events-none'>
-                        Demo video playing of the working app
-                    </h1>
-                )}
-
                 <button
                     onClick={handlePlayPause}
                     className = {`
