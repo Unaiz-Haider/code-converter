@@ -52,7 +52,7 @@ function Hero() {
                 <video 
                     ref = {videoRef}
                     src="/demo-video.mp4"
-                    className=""
+                    className="absolute inset-0 w-full h-full object-cover rounded-lg"
                     onEnded={() => setIsPlaying(false)}
                     onClick={handlePlayPause}
                     playsInline
@@ -63,6 +63,35 @@ function Hero() {
                         Demo video playing of the working app
                     </h1>
                 )}
+
+                <button
+                    onClick={handlePlayPause}
+                    className = {`
+                        absolute
+                        flex items-center justify-center
+                        w-16 h-16 sm:w-20 sm:h-20
+                        rounded-full
+                        bg-white/20 backdrop-blur-md 
+                        hover:bg-white/10 hover:scale-110
+                        transition-all duration-300
+                        z-10
+                        ${isPlaying ? 'opacity-0 hover:opacity-100' : 'opacity-100'}
+                    `}
+                >
+                    {isPlaying ? (
+                        <svg className="w-7 h-7 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <rect x="6" y="5" width="4" height="14" rx="1" />
+                            <rect x="14" y="5" width="4" height="14" rx="1" />
+                        </svg>
+                    ) : (
+                        <svg className="w-7 h-7 sm:w-8 sm:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                    )}
+
+                </button>
+
+                
 
             </div>
 
