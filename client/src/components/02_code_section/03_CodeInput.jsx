@@ -20,20 +20,37 @@ function CodeInput({ handleConvert, loading, inputLang }) {
         handleConvert(inputCode /* , selectedLang */)
     }
 
+    function handleEditorWillMount(monaco) {
+        monaco.editor.defineTheme("pure-black", {
+            base: "vs-dark",
+            inherit: true,
+            rules: [],
+            colors: {
+                "editor.background": "#000000",
+                "editorGutter.background": "#000000",
+                "editor.lineHighlightBackground": "#000000",
+                "minimap.background": "#000000",
+                "scrollbarSlider.background": "#ffffff22",
+            },
+        });
+    }
+
 
     return (
         <div className="flex flex-col gap-3 w-full lg:w-auto">
 
             {/* Header */}
             <div className="flex items-center justify-between w-full">
-                <h1 className="font-semibold text-white text-lg tracking-wide">
-                    From
-                </h1>
 
                 <CodeLangSelect
                     selectedLang={selectedLang}
                     setSelectedLang={setSelectedLang}
+                    ballColor='#3b82f6'
                 />
+
+                <p className="font-semibold text-white/30 text-xs tracking-wide">
+                    INPUT CODE
+                </p>
             </div>
 
             {/* Code Box */}
@@ -41,32 +58,42 @@ function CodeInput({ handleConvert, loading, inputLang }) {
                 relative
                 w-full lg:w-[40vw]
                 h-[55vh] lg:h-[60vh]
+                text-sm
                 rounded-xl
                 overflow-hidden
-                border border-white/20
-                bg-gray-900/80
+                bg-black
                 backdrop-blur-md
                 shadow-lg
             ">
 
-                <textarea
+                <Editor
+                    height="100%"
+                    width="100%"
+                    language={selectedLang}
+                    theme="pure-black"
                     value={inputCode}
-                    onChange={(e) => setInputCode(e.target.value)}
-                    spellCheck={false}
-                    className="
-                        w-full h-full
-                        p-4 pr-4
-                        bg-transparent
-                        text-white
-                        resize-none
-                        font-mono text-sm
-                        focus:outline-none
-                        placeholder-gray-400
-                    "
-                    placeholder="Enter your code here..."
+                    onChange={(value) => setInputCode(value || '')}
+                    beforeMount={handleEditorWillMount}
+                    options={{
+                        fontSize: 14,
+                        fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+                        minimap: { enabled: false },
+                        scrollBeyondLastLine: false,
+                        padding: { top: 16, bottom: 16 },
+                        lineNumbers: "on",
+                        wordWrap: "on",
+                        automaticLayout: true,
+                        renderLineHighlight: "none",
+                        overviewRulerLanes: 0,
+                        hideCursorInOverviewRuler: true,
+                        scrollbar: {
+                            verticalScrollbarSize: 8,
+                            horizontalScrollbarSize: 8,
+                        },
+                    }}
                 />
 
-                {/* Button */}
+                {/* Convert Button */}
                 <button
                     onClick={handleTranslate}
                     disabled={loading}
@@ -85,6 +112,7 @@ function CodeInput({ handleConvert, loading, inputLang }) {
                         transition
                         shadow-md
                         text-sm sm:text-base
+                        z-10
                     "
                 >
                     {loading ? 'Converting...' : 'Convert'}

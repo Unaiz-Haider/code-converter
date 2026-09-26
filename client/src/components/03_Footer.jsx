@@ -6,7 +6,7 @@ import FooterSection from './03_footer_section/03_footerSection.jsx'
 function Footer() {
     return (
         <>
-            <div className='w-full flex flex-col items-center bg-gray-900 mt-110 lg:mt-0'>
+            <div className='w-full flex flex-col items-center bg-gray-950 mt-110 lg:mt-0'>
                 {/* <TechMarquee /> */}
                 <Header />
                 <FooterSection />

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import CodeLangSelect from './02.1_CodeLangSelect.jsx'
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import Editor from "@monaco-editor/react";
 
 function CodeOutput({ outputCode, selectedLang, setSelectedLang }) {
     const [copied, setCopied] = useState(false);
@@ -23,76 +22,37 @@ function CodeOutput({ outputCode, selectedLang, setSelectedLang }) {
         }
     }
 
-    console.log("Output Code:", outputCode);
+    function handleEditorWillMount(monaco) {
+        monaco.editor.defineTheme("pure-black", {
+            base: "vs-dark",
+            inherit: true,
+            rules: [],
+            colors: {
+                "editor.background": "#000000",
+                "editorGutter.background": "#000000",
+                "editor.lineHighlightBackground": "#000000",
+                "minimap.background": "#000000",
+                "scrollbarSlider.background": "#ffffff22",
+            },
+        });
+    }
 
     return (
         <div className="flex flex-col gap-3 w-full lg:w-auto">
 
             {/* Header */}
             <div className="flex items-center justify-between w-full">
-                <h1 className='font-semibold text-white text-lg tracking-wide'>
-                    To
-                </h1>
 
                 <CodeLangSelect
                     selectedLang={selectedLang}
                     setSelectedLang={setSelectedLang}
+                    ballColor='#ec4899'
                 />
-            </div>
 
-
-            {/* Code Box */}
-            <div className="
-                relative
-                w-full lg:w-[40vw]
-                h-[55vh] lg:h-[60vh]
-                text-sm
-                rounded-xl
-                overflow-hidden
-                border border-white/20
-                bg-gray-900/80
-                backdrop-blur-md
-                shadow-lg
-            ">
-
-                {outputCode ? (
-                    <SyntaxHighlighter
-                        className="text-sm lg:text-lg"
-                        language={selectedLang}
-                        style={vscDarkPlus}
-                        showLineNumbers={true}
-                        wrapLongLines={true}
-                        customStyle={{
-                            width: "100%",
-                            height: "100%",
-                            margin: 0,
-                            padding: "16px",
-                            paddingRight: "16px",
-                            background: "transparent",
-                            color: "#ffffff",
-                            fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
-                            lineHeight: "1.25rem",
-                            overflowX: "hidden",
-                            whiteSpace: "pre-wrap",
-                            wordBreak: "break-word",
-                        }}
-                    >
-                        {outputCode}
-                    </SyntaxHighlighter>
-                ) : (
-                    <div className='w-full h-full p-4 pr-4 bg-transparent text-gray-400 resize-none font-mono text-sm focus:outline-none'>
-                        Converted code will appear here...
-                    </div>
-                )}
-
-
-                {/* Copy Button */}
                 <button
                     onClick={handleCopy}
                     disabled={!outputCode}
-                    className="
-                        absolute
-                        bottom-4
+                    className={`
                         right-4 sm:right-6 lg:right-8
                         px-4 py-2
                         rounded-lg
@@ -106,17 +66,65 @@ function CodeOutput({ outputCode, selectedLang, setSelectedLang }) {
                         disabled:opacity-40
                         disabled:cursor-not-allowed
                         text-sm sm:text-base
-                    "
+                    `}
                 >
                     Copy
                 </button>
 
+            </div>
+
+
+            {/* Code Box */}
+            <div className="
+                relative
+                w-full lg:w-[40vw]
+                h-[55vh] lg:h-[60vh]
+                text-sm
+                rounded-xl
+                overflow-hidden
+                bg-black
+                backdrop-blur-md
+                shadow-lg
+            ">
+
+                {outputCode ? (
+                    <Editor
+                        height="100%"
+                        width="100%"
+                        language={selectedLang}
+                        theme="pure-black"
+                        value={outputCode}
+                        beforeMount={handleEditorWillMount}
+                        options={{
+                            readOnly: true,
+                            domReadOnly: true,
+                            fontSize: 14,
+                            fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+                            minimap: { enabled: false },
+                            scrollBeyondLastLine: false,
+                            padding: { top: 16, bottom: 16 },
+                            lineNumbers: "on",
+                            wordWrap: "on",
+                            automaticLayout: true,
+                            renderLineHighlight: "none",
+                            overviewRulerLanes: 0,
+                            hideCursorInOverviewRuler: true,
+                            cursorStyle: "line-thin",
+                            scrollbar: {
+                                verticalScrollbarSize: 8,
+                                horizontalScrollbarSize: 8,
+                            },
+                        }}
+                    />
+                ) : (
+                    <div className='w-full h-full p-4 pr-4 bg-transparent text-gray-400 resize-none font-mono text-sm focus:outline-none'>
+                        Converted code will appear here...
+                    </div>
+                )}
 
                 {copied && (
                     <div className="
-                        absolute
-                        top-16
-                        right-4 sm:right-6 lg:right-8
+                        absolute bottom-4 right-4 z-10
                         bg-green-600
                         text-white
                         px-3 sm:px-4

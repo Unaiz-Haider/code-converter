@@ -1,6 +1,6 @@
 import React from "react"
 
-function CodeLangSelect({ selectedLang, setSelectedLang }) {
+function CodeLangSelect({ selectedLang, setSelectedLang, ballColor = "#a855f7" }) {
     const languages = {
         'Python': 'python',
         'JavaScript': 'javascript',
@@ -81,19 +81,22 @@ function CodeLangSelect({ selectedLang, setSelectedLang }) {
     }
 
     return (
-        <div className="relative">
+        <div className="relative flex items-center">
+
+           <div className="w-2 h-2 rounded-full mr-4 ml-2" style={ {backgroundColor : ballColor}}></div>
+
             <select
                 value={selectedLang}
                 onChange={(e) => setSelectedLang(e.target.value)}
                 className =
-                    "appearance-none px-4 py-2 pr-10 rounded-lg
+                    {`appearance- pl-2 py-2 w-[120px] rounded-xl
                     bg-white/10 backdrop-blur-md text-white 
                     border border-white/20 shadow-md 
                     focus:outline-none focus:ring-2 focus:ring-blue-500/50 
-                    hover:bg-white/20 transition cursor-pointer text-sm"
+                    hover:border-white/30 transition cursor-pointer text-sm`}
             >
                 {Object.entries(languages).map(([label, value]) => (
-                    <option key={value} value={value} className="text-black">
+                    <option key={value} value={value} className="bg-gray-900 text-white text-sm">
                         {label}
                     </option>
                 ))}
