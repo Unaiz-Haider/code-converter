@@ -49,7 +49,7 @@ function FooterSection() {
                     {/* built with */}
                     <div className="flex flex-col gap-3 items-start">
                         <h2 className="text-lg font-semibold text-white border-b border-blue-500 pb-1 w-full">Built With</h2>
-                        {['React', 'Tailwindcss', 'Vite', 'Gen-AI'].map((item) => (
+                        {['React, TailwindCSS', 'Node.js, Express.js', 'Vite', 'Gen-AI'].map((item) => (
                             <span key={item} className="text-gray-400 hover:text-white cursor-pointer transition">
                                 {item}
                             </span>
