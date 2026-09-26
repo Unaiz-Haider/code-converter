@@ -5,7 +5,7 @@ function FooterSection() {
         <footer className="w-full bg-gray- text-white mt-auto">
 
             {/* top border accent */}
-            <div className="w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" />
+            <div className="w-full h-px  bg-white/10  from-blue-500 via-purple-500 to-pink-500" />
 
             <div className="flex flex-col items-center py-8 px- gap-4 ">
 
@@ -59,7 +59,7 @@ function FooterSection() {
                 </div>
 
                 {/* divider */}
-                <div className="w-full h-[0.5px] bg-gray-700" />
+                <div className="w-full h-px bg-white/10" />
 
                 {/* bottom */}
                 <div className="flex flex-col items-center w-full text-gray-500 text-sm">
