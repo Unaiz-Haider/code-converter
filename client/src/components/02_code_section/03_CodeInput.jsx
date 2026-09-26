@@ -37,10 +37,10 @@ function CodeInput({ handleConvert, loading, inputLang }) {
 
 
     return (
-        <div className="flex flex-col gap-3 w-full lg:w-auto">
+        <div className="flex flex-col gap-3 w-full max-w-full lg:w-auto">
 
             {/* Header */}
-            <div className="flex items-center justify-between w-full">
+            <div className="flex flex-wrap items-center justify-between gap-2 w-full">
 
                 <CodeLangSelect
                     selectedLang={selectedLang}
@@ -48,7 +48,7 @@ function CodeInput({ handleConvert, loading, inputLang }) {
                     ballColor='#3b82f6'
                 />
 
-                <p className="font-semibold text-white/30 text-xs tracking-wide">
+                <p className="font-semibold text-white/30 text-[10px] sm:text-xs tracking-wide">
                     INPUT CODE
                 </p>
             </div>
@@ -57,7 +57,8 @@ function CodeInput({ handleConvert, loading, inputLang }) {
             <div className="
                 relative
                 w-full lg:w-[40vw]
-                h-[55vh] lg:h-[60vh]
+                h-[45vh] sm:h-[50vh] md:h-[55vh] lg:h-[60vh]
+                min-h-[280px]
                 text-sm
                 rounded-xl
                 overflow-hidden
@@ -75,11 +76,11 @@ function CodeInput({ handleConvert, loading, inputLang }) {
                     onChange={(value) => setInputCode(value || '')}
                     beforeMount={handleEditorWillMount}
                     options={{
-                        fontSize: 14,
+                        fontSize: 13,
                         fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
                         minimap: { enabled: false },
                         scrollBeyondLastLine: false,
-                        padding: { top: 16, bottom: 16 },
+                        padding: { top: 16, bottom: 56 }, // extra bottom padding so button never covers last lines
                         lineNumbers: "on",
                         wordWrap: "on",
                         automaticLayout: true,
@@ -99,10 +100,10 @@ function CodeInput({ handleConvert, loading, inputLang }) {
                     disabled={loading}
                     className="
                         absolute
-                        bottom-4
-                        right-4 sm:right-6 lg:right-8
-                        px-4 sm:px-5
-                        py-2
+                        bottom-3 sm:bottom-4
+                        right-3 sm:right-6 lg:right-8
+                        px-3 sm:px-5
+                        py-1.5 sm:py-2
                         rounded-lg
                         text-white
                         bg-gradient-to-r from-blue-500 to-purple-500
@@ -111,7 +112,8 @@ function CodeInput({ handleConvert, loading, inputLang }) {
                         active:scale-95
                         transition
                         shadow-md
-                        text-sm sm:text-base
+                        text-xs sm:text-sm lg:text-base
+                        whitespace-nowrap
                         z-10
                     "
                 >

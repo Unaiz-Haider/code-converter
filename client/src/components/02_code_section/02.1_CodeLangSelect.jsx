@@ -81,19 +81,22 @@ function CodeLangSelect({ selectedLang, setSelectedLang, ballColor = "#a855f7" }
     }
 
     return (
-        <div className="relative flex items-center">
+        <div className="relative flex items-center min-w-0">
 
-           <div className="w-2 h-2 rounded-full mr-4 ml-2" style={ {backgroundColor : ballColor}}></div>
+           <div className="w-2 h-2 shrink-0 rounded-full mr-2 sm:mr-4 ml-1 sm:ml-2" style={ {backgroundColor : ballColor}}></div>
 
             <select
                 value={selectedLang}
                 onChange={(e) => setSelectedLang(e.target.value)}
                 className =
-                    {`appearance- pl-2 py-2 w-[120px] rounded-xl
+                    {`appearance-none pl-2 pr-6 py-1.5 sm:py-2
+                    w-[92px] xs:w-[100px] sm:w-[120px]
+                    max-w-full
+                    rounded-xl
                     bg-white/10 backdrop-blur-md text-white 
                     border border-white/20 shadow-md 
                     focus:outline-none focus:ring-2 focus:ring-blue-500/50 
-                    hover:border-white/30 transition cursor-pointer text-sm`}
+                    hover:border-white/30 transition cursor-pointer text-xs sm:text-sm`}
             >
                 {Object.entries(languages).map(([label, value]) => (
                     <option key={value} value={value} className="bg-gray-900 text-white text-sm">
@@ -104,8 +107,8 @@ function CodeLangSelect({ selectedLang, setSelectedLang, ballColor = "#a855f7" }
             </select>
 
             {/* Custom Arrow */}
-            <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-300">
-
+            <div className="pointer-events-none absolute inset-y-0 right-1.5 sm:right-3 flex items-center text-gray-300 text-xs">
+                ▾
             </div>
             
         </div>

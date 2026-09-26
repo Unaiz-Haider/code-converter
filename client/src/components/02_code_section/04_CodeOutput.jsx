@@ -38,10 +38,10 @@ function CodeOutput({ outputCode, selectedLang, setSelectedLang }) {
     }
 
     return (
-        <div className="flex flex-col gap-3 w-full lg:w-auto">
+        <div className="flex flex-col gap-3 w-full max-w-full lg:w-auto">
 
             {/* Header */}
-            <div className="flex items-center justify-between w-full">
+            <div className="flex flex-wrap items-center justify-between gap-2 w-full">
 
                 <CodeLangSelect
                     selectedLang={selectedLang}
@@ -53,8 +53,8 @@ function CodeOutput({ outputCode, selectedLang, setSelectedLang }) {
                     onClick={handleCopy}
                     disabled={!outputCode}
                     className={`
-                        right-4 sm:right-6 lg:right-8
-                        px-4 py-2
+                        px-3 sm:px-4
+                        py-1.5 sm:py-2
                         rounded-lg
                         text-white
                         bg-gradient-to-r from-green-500 to-emerald-500
@@ -65,7 +65,8 @@ function CodeOutput({ outputCode, selectedLang, setSelectedLang }) {
                         shadow-md
                         disabled:opacity-40
                         disabled:cursor-not-allowed
-                        text-sm sm:text-base
+                        text-xs sm:text-sm lg:text-base
+                        whitespace-nowrap
                     `}
                 >
                     Copy
@@ -78,7 +79,8 @@ function CodeOutput({ outputCode, selectedLang, setSelectedLang }) {
             <div className="
                 relative
                 w-full lg:w-[40vw]
-                h-[55vh] lg:h-[60vh]
+                h-[45vh] sm:h-[50vh] md:h-[55vh] lg:h-[60vh]
+                min-h-[280px]
                 text-sm
                 rounded-xl
                 overflow-hidden
@@ -98,7 +100,7 @@ function CodeOutput({ outputCode, selectedLang, setSelectedLang }) {
                         options={{
                             readOnly: true,
                             domReadOnly: true,
-                            fontSize: 14,
+                            fontSize: 13,
                             fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
                             minimap: { enabled: false },
                             scrollBeyondLastLine: false,
@@ -117,24 +119,25 @@ function CodeOutput({ outputCode, selectedLang, setSelectedLang }) {
                         }}
                     />
                 ) : (
-                    <div className='w-full h-full p-4 pr-4 bg-transparent text-gray-400 resize-none font-mono text-sm focus:outline-none'>
+                    <div className='w-full h-full p-3 sm:p-4 bg-transparent text-gray-400 resize-none font-mono text-xs sm:text-sm focus:outline-none'>
                         Converted code will appear here...
                     </div>
                 )}
 
                 {copied && (
                     <div className="
-                        absolute bottom-4 right-4 z-10
+                        absolute bottom-3 sm:bottom-4 right-3 sm:right-4 z-10
                         bg-green-600
                         text-white
-                        px-3 sm:px-4
-                        py-2
+                        px-2.5 sm:px-4
+                        py-1.5 sm:py-2
                         rounded-lg
                         shadow-lg
                         animate-pulse
-                        text-sm sm:text-base
+                        text-xs sm:text-sm lg:text-base
+                        whitespace-nowrap
                     ">
-                        ✅ Copied Successfully
+                        ✅ Copied
                     </div>
                 )}
 
