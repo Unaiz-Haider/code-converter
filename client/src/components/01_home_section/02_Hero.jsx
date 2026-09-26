@@ -43,8 +43,8 @@ function Hero() {
             </div>
 
             <div 
-                className = 'flex items-center justify-center p-6 sm:p-8 rounded-lg w-full lg:w-2/3 aspect-video
-                shadow-[0_0_8px_rgba(59,130,246,0.08),0_0_14px_rgba(168,85,247,0.06),0_0_20px_rgba(236,72,153,0.04)]
+                className = 'relative flex items-center justify-center p-6 sm:p-8 rounded-lg w-full lg:w-2/3
+                aspect-video shadow-[0_0_8px_rgba(59,130,246,0.08),0_0_14px_rgba(168,85,247,0.06),0_0_20px_rgba(236,72,153,0.04)]
                 hover:shadow-[0_0_15px_rgba(59,130,246,0.2),0_0_25px_rgba(168,85,247,0.15),0_0_35px_rgba(236,72,153,0.1)]
                 hover:border-purple-500/30
                 transition-all duration-300'>
