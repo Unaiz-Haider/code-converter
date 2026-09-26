@@ -18,7 +18,7 @@ function Header() {
 
                 <h1 className="text-4xl sm:text-5xl md:text-6xl
                     text-center
-                    bg-gradient-to-r from-blue-400 to-purple-400
+                    bg-gradient-to-r from-blue-600 to-purple-600
                     bg-clip-text text-transparent">
                     Code Converter App
                 </h1>
