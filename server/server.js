@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const OpenAI = require("openai");
 const hljs = require("highlight.js");
-
+const codeConverterPrompt = require("./codeConverterPrompt");
 const app = express();
 
 app.use(cors());
@@ -27,7 +27,14 @@ const openai = new OpenAI({
 
 app.post("/convert", async (req, res) => {
   try {
-    const { code, toLang } = req.body;
+
+    const { code, toLang } = req.body || {};
+
+    if (!code || !toLang) {
+      return res.status(400).json({
+        error: "code and toLang are required"
+      });
+    }
 
 
     // Detect source language using AI
@@ -37,31 +44,7 @@ app.post("/convert", async (req, res) => {
       messages: [
         {
           role: "system",
-          content: `
-                    You are an expert programming language detector and code converter.
-                    
-                    Your tasks are:
-
-                    1. Detect the programming language of the input code.
-                    2. Convert the code to the requested language.
-                    3. Return ONLY valid JSON.
-
-                    Rules:
-                    - Do not explain anything.
-                    - Do not use markdown.
-                    - Do not use triple backticks.
-                    - Preserve comments.
-                    - Preserve the logic.
-                    - Output valid JSON only.
-
-                    The JSON format must be EXACTLY:
-                    
-                    {
-                      "detectedLanguage": "python",
-                      "output": "converted code here"
-                    }
-
-                    `,
+          content: codeConverterPrompt
         },
         {
           role: "user",
@@ -89,7 +72,7 @@ app.post("/convert", async (req, res) => {
     let output = result.output.trim();
 
 
-    
+
     // Remove markdown code fences if the model still returns them
     if (output.startsWith("```")) {
       output = output
