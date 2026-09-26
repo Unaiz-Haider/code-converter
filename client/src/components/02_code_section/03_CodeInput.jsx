@@ -66,7 +66,21 @@ function CodeInput({ handleConvert, loading, inputLang }) {
                 backdrop-blur-md
                 shadow-lg
             ">
-
+                
+                {inputCode.length === 0 && (
+                    <div className="
+                        absolute
+                        top-4 left-[52px] sm:left-14
+                        text-gray-500
+                        text-sm
+                        pointer-events-none
+                        z-10
+                        font-[ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation_Mono','Courier_New',monospace]
+                    ">
+                        Enter your code here...
+                    </div>
+                )}
+                
                 <Editor
                     height="100%"
                     width="100%"
