@@ -1,38 +1,40 @@
 function Hero() {
     return (
-        <>
-            <div className='flex items-center justify-center min-h-screen w-full bg-gray-900'>
+        <div className='flex flex-col items-center justify-evenly min-h-screen w-full gap-12 bg-gray-950'>
 
-                <div className="flex flex-col lg:flex-row justify-between w-full px-6 sm:px-8 lg:px-12 gap-10 lg:gap-0">
-                    
-                    <div className='flex flex-col justify-center w-full lg:w-auto'>
-                        <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-semibold mb-6 w-full lg:w-6/7 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent text-center lg:text-left'>
-                            Code Converter using Gen-AI
-                        </h1>
+            <div className="flex flex-col justify-center px-6 sm:px-8 lg:px-10 gap-10 lg:gap-0 mt-8">
 
-                        <p className='text-gray-400 text-xl sm:text-2xl md:text-3xl lg:text-4xl w-full lg:w-150 text-center'>
-                            Code Converter to make your code conversion easier
-                        </p>
-                    </div>
+                <div className='flex flex-col items-center justify-center lg:w-auto gap-6'>
+                    <h1 className='text-5xl font-extrabold sm:text-6xl md:text-7xl lg:text-7xl font-space-grotesk w-full bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent text-center'>
+                        Code Converter
+                    </h1>
 
-                    <div className='flex items-center justify-center border border-gray-600 p-6 sm:p-8 rounded-lg w-full lg:w-auto'>
-                        <h1 className='text-xl sm:text-2xl text-center text-white'>
-                            Demo video playing of the working app
-                        </h1>
-                    </div>
+                    <h1 className='text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-semibold font-space-grotesk bg-white/90 w-full lg:w-11/12 bg-clip-text text-transparent text-center'>
+                        using Gen-AI
+                    </h1>
+
+                    <p className='text-gray-400 text-sm font-sans sm:text-2xl md:text-3xl lg:text-2xl w-full lg:w-[600px] text-center'>
+                        Translate code between any programming language with AI precision.
+                    </p>
+
+                    <button className="text-white text-base sm:text-lg md:text-xl font-semibold px-5 py-2.5 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full hover:opacity-90 transition-opacity">
+                        Start Converting
+                    </button>
 
                 </div>
-
-                {/* <div className='flex justify-center relative top-20'>
-                    <div className='p-[2px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-lg'>
-                        <h1 className='text-3xl font-semibold text-white px-6 py-3 rounded-lg bg-gray-800 cursor-pointer hover:bg-gray-700 transition duration-300'>
-                            Try out our converter →
-                        </h1>
-                    </div>
-                </div> */}
-
             </div>
-        </>
+
+            <div className = 'flex items-center justify-center p-6 sm:p-8 rounded-lg w-full lg:w-2/3 aspect-video
+    shadow-[0_0_8px_rgba(59,130,246,0.08),0_0_14px_rgba(168,85,247,0.06),0_0_20px_rgba(236,72,153,0.04)]
+    hover:shadow-[0_0_15px_rgba(59,130,246,0.2),0_0_25px_rgba(168,85,247,0.15),0_0_35px_rgba(236,72,153,0.1)]
+    hover:border-purple-500/30
+    transition-all duration-300'>
+                <h1 className='text-xl sm:text-2xl text-center text-white'>
+                    Demo video playing of the working app
+                </h1>
+            </div>
+
+        </div>
     )
 }
 
