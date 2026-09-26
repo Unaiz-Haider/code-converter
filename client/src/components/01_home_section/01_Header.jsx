@@ -25,6 +25,14 @@ function Header() {
                     <a href="#about" className="text-gray-300 text-sm sm:text-base hover:text-white transition-colors">
                         How It's Built
                     </a>
+                    <a
+                        href="https://www.linkedin.com/in/unaiz-haider-126409290/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-300 text-sm sm:text-base hover:text-white transition-colors cursor-pointer"
+                    >
+                        LinkedIn
+                    </a>
                 </nav>
             </div>
 
