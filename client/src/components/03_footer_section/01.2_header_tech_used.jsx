@@ -66,7 +66,7 @@ function Header() {
 
                 <div className='flex flex-col lg:flex-row justify-center gap-8 lg:gap-20 w-full px-4 sm:px-6 lg:px-0'>
 
-                    <div className='flex flex-col gap-6 min-h-full w-full lg:w-1/3 border border-white/10 rounded-lg bg-white/10 py-6'>
+                    <div className='flex flex-col gap-6 w-full lg:w-1/3 border border-white/10 rounded-lg bg-white/10 py-6'>
 
                         <div className='text-2xl sm:text-3xl font-bold self-start pl-6 sm:pl-10'>
                             <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
@@ -148,7 +148,7 @@ function Header() {
                     </div>
 
 
-                    <div className="w-full lg:w-1/3 min-h-full rounded-2xl border border-white/10 bg-white/10 backdrop-blur-lg p-5 sm:p-6 lg:p-8 flex flex-col gap-6 text-white">
+                    <div className="w-full lg:w-1/3 rounded-2xl border border-white/10 bg-white/10 backdrop-blur-lg p-5 sm:p-6 lg:p-8 flex flex-col gap-6 text-white">
 
                         <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                             AI Model Used
@@ -183,7 +183,7 @@ function Header() {
                         </p>
 
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 relative top-6 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
 
                             <div className="rounded-xl transition-all duration-300 p-4 bg-blue-500/20 hover:bg-blue-500/40 hover:scale-[1.02]">
                                 <p className="text-gray-400 text-sm">Latency </p>
