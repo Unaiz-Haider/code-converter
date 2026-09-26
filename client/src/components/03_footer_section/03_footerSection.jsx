@@ -5,7 +5,7 @@ function FooterSection() {
         <footer className="w-full bg-gray- text-white mt-auto">
 
             {/* top border accent */}
-            <div className="w-full h-px  bg-white/10  from-blue-500 via-purple-500 to-pink-500" />
+            <div className="w-full h-px  bg-white/10" />
 
             <div className="flex flex-col items-center py-8 px- gap-4 ">
 
@@ -21,28 +21,36 @@ function FooterSection() {
                     <div className="flex flex-col gap-3 items-start">
                         <h2 className="text-lg font-semibold text-white border-b border-blue-500 pb-1 w-full">Contact</h2>
                         {[
-                            { name: 'LinkedIn', url: 'https://www.linkedin.com/in/unaiz-haider-126409290/'}, 
-                            { name: 'Portfolio', url: ''}, 
-                            { name: 'Gmail', url: 'mailto:unaizhaider11072@gmail.com'}
+                            { name: 'LinkedIn', url: 'https://www.linkedin.com/in/unaiz-haider-126409290/' },
+                            { name: 'Portfolio', url: '' },
+                            { name: 'Gmail', url: 'mailto:unaizhaider11072@gmail.com' }
                         ].map((item) => (
-                                <a 
-                                    key = {item.name}
-                                    href = {item.url}
-                                    target = {item.name ===  'Gmail' ? '_self' : '_blank'} 
-                                    rel="noopener noreferrer"
-                                    className="text-gray-400 hover:text-white cursor-pointer transition">
-                                    {item.name}
-                                </a>
-                            ))}
+                            <a
+                                key={item.name}
+                                href={item.url}
+                                target={item.name === 'Gmail' ? '_self' : '_blank'}
+                                rel="noopener noreferrer"
+                                className="text-gray-400 hover:text-white cursor-pointer transition">
+                                {item.name}
+                            </a>
+                        ))}
                     </div>
 
                     {/* pages */}
                     <div className="flex flex-col gap-3 items-start">
                         <h2 className="text-lg font-semibold text-white border-b border-blue-500 pb-1 w-full">Pages</h2>
-                        {['Home', 'Converter', 'About'].map((item) => (
-                            <span key={item} className="text-gray-400 hover:text-white cursor-pointer transition">
-                                {item}
-                            </span>
+                        {[
+                            { name: 'Home', id: 'home' },
+                            { name: 'Converter', id: 'converter' },
+                            { name: 'About', id: 'about' }
+                        ].map((item) => (
+                            <a
+                                key={item.name}
+                                href={`#${item.id}`}
+                                className="text-gray-400 hover:text-white cursor-pointer transition"
+                            >
+                                {item.name}
+                            </a>
                         ))}
                     </div>
 
