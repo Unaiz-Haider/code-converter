@@ -49,8 +49,8 @@ function Hero() {
 
             <div
                 className='relative flex items-center justify-center p-6 sm:p-8 rounded-lg w-full lg:w-2/3 aspect-video 
-                            shadow-[0_0_8px_#3B82F614,0_0_14px_#A855F710,0_0_20px_#EC48990A]
-                            hover:shadow-[0_0_15px_#3B82F633,0_0_25px_#A855F726,0_0_35px_#EC48991A]
+                            shadow-[0_0_2px_var(--color-brand-1),0_0_4px_var(--color-brand-2),0_0_5px_var(--color-brand-3)]
+                            hover:shadow-[0_0_4px_var(--color-brand-1),0_0_7px_var(--color-brand-2),0_0_9px_var(--color-brand-3)]
                             hover:border-purple-500/30
                             transition-all duration-300'
             >
