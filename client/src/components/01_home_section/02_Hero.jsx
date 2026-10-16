@@ -48,7 +48,7 @@ function Hero() {
             </div>
 
             <div
-                className='relative flex items-center justify-center p-6 sm:p-8 rounded-lg w-full lg:w-2/3 aspect-video 
+                className='relative flex items-center justify-center p-6 sm:p-8 rounded-lg w-[90%] lg:w-2/3 aspect-video 
                             shadow-[0_0_2px_var(--color-brand-1),0_0_4px_var(--color-brand-2),0_0_5px_var(--color-brand-3)]
                             hover:shadow-[0_0_4px_var(--color-brand-1),0_0_7px_var(--color-brand-2),0_0_9px_var(--color-brand-3)]
                             hover:border-purple-500/30
