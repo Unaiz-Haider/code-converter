@@ -1,16 +1,20 @@
 import React from "react"
+import { useTheme } from "../../context/ThemeContext"
 
 function FooterSection() {
+
+    const { theme } = useTheme();
+
     return (
         <footer className="w-full bg-gray- text-white mt-auto">
 
             {/* top border accent */}
-            <div className="w-full h-px  bg-white/10" />
+            <div className={`w-full h-px  ${theme === "dark" ? "bg-white/10" : "bg-black/20"}`} />
 
             <div className="flex flex-col items-center py-8 px- gap-4 ">
 
                 {/* logo / brand */}
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                <h1 className={`text-3xl font-bold bg-gradient-to-r from-brand-1 via-brand-2 to-brand-3 bg-clip-text text-transparent`}>
                     Code Converter
                 </h1>
 
@@ -19,7 +23,7 @@ function FooterSection() {
 
                     {/* contact */}
                     <div className="flex flex-col gap-3 items-start">
-                        <h2 className="text-lg font-semibold text-white border-b border-blue-500 pb-1 w-full">Contact</h2>
+                        <h2 className={`text-lg font-semibold ${theme === "dark" ? "text-white" : "text-black/90"} border-b border-blue-500 pb-1 w-full`}>Contact</h2>
                         {[
                             { name: 'LinkedIn', url: 'https://www.linkedin.com/in/unaiz-haider-126409290/' },
                             { name: 'Portfolio', url: '' },
@@ -30,7 +34,7 @@ function FooterSection() {
                                 href={item.url}
                                 target={item.name === 'Gmail' ? '_self' : '_blank'}
                                 rel="noopener noreferrer"
-                                className="text-gray-400 hover:text-white cursor-pointer transition">
+                                className={` ${ theme === "dark" ? "text-gray-400 hover:text-white" : "text-gray-400 hover:text-black/90"} hover:scale-[1.05] cursor-pointer transition`}>
                                 {item.name}
                             </a>
                         ))}
@@ -38,7 +42,7 @@ function FooterSection() {
 
                     {/* pages */}
                     <div className="flex flex-col gap-3 items-start">
-                        <h2 className="text-lg font-semibold text-white border-b border-blue-500 pb-1 w-full">Pages</h2>
+                        <h2 className={`text-lg font-semibold ${theme === "dark" ? "text-white" : "text-black/90"} border-b border-blue-500 pb-1 w-full`}>Pages</h2>
                         {[
                             { name: 'Home', id: 'home' },
                             { name: 'Converter', id: 'converter' },
@@ -47,8 +51,7 @@ function FooterSection() {
                             <a
                                 key={item.name}
                                 href={`#${item.id}`}
-                                className="text-gray-400 hover:text-white cursor-pointer transition"
-                            >
+                                className={` ${ theme === "dark" ? "text-gray-400 hover:text-white" : "text-gray-400 hover:text-black/90"} hover:scale-[1.05] cursor-pointer transition`}>
                                 {item.name}
                             </a>
                         ))}
@@ -56,9 +59,9 @@ function FooterSection() {
 
                     {/* built with */}
                     <div className="flex flex-col gap-3 items-start">
-                        <h2 className="text-lg font-semibold text-white border-b border-blue-500 pb-1 w-full">Built With</h2>
+                        <h2 className={`text-lg font-semibold ${theme === "dark" ? "text-white" : "text-black/90"} border-b border-blue-500 pb-1 w-full`}>Built With</h2>
                         {['React, TailwindCSS', 'Node.js, Express.js', 'Vite', 'Gen-AI'].map((item) => (
-                            <span key={item} className="text-gray-400 hover:text-white cursor-pointer transition">
+                            <span key={item} className={` ${theme === "dark" ? "text-gray-400 hover:text-white" : "text-gray-400 hover:text-black/90"} hover:scale-[1.05] cursor-pointer transition`}>
                                 {item}
                             </span>
                         ))}
@@ -67,10 +70,10 @@ function FooterSection() {
                 </div>
 
                 {/* divider */}
-                <div className="w-full h-px bg-white/10" />
+                <div className={`w-full h-px  ${theme === "dark" ? "bg-white/10" : "bg-black/10"}`} />
 
                 {/* bottom */}
-                <div className="flex flex-col items-center w-full text-gray-500 text-sm">
+                <div className={`flex flex-col items-center w-full ${ theme === "dark" ? "text-gray-500" : "text-black/90"} font-semibold text-sm`}>
                     <span>© 2025 Code Converter. All rights reserved.</span>
                     <span>@UnaizHaider</span>
                 </div>
