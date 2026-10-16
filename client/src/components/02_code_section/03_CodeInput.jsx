@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import CodeLangSelect from './02.1_CodeLangSelect.jsx'
 import Editor from "@monaco-editor/react";
+import { useTheme } from '../../context/ThemeContext.jsx';
 
 function CodeInput({ handleConvert, loading, inputLang }) {
+
+    const { theme  } = useTheme();
     const [selectedLang, setSelectedLang] = useState('python')
     const [inputCode, setInputCode] = useState('')
 
@@ -48,7 +51,7 @@ function CodeInput({ handleConvert, loading, inputLang }) {
                     ballColor='#3b82f6'
                 />
 
-                <p className="font-semibold text-white/30 text-[10px] sm:text-xs tracking-wide">
+                <p className={`font-semibold ${ theme === "dark" ? "text-white/30" : "text-gray-400"} text-[10px] sm:text-xs tracking-wide`}>
                     INPUT CODE
                 </p>
             </div>
@@ -120,7 +123,7 @@ function CodeInput({ handleConvert, loading, inputLang }) {
                         py-1.5 sm:py-2
                         rounded-lg
                         text-white
-                        bg-gradient-to-r from-blue-500 to-purple-500
+                        bg-gradient-to-r from-brand-1 via-brand-2 to-brand-3
                         cursor-pointer
                         hover:scale-105
                         active:scale-95

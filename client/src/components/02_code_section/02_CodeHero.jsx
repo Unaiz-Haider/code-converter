@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import CodeInput from './03_CodeInput.jsx'
 import CodeOutput from './04_CodeOutput.jsx'
+import { useTheme } from '../../context/ThemeContext.jsx';
 
 
 function Hero() {
@@ -8,7 +9,9 @@ function Hero() {
     const [outputLang, setOutputLang] = useState('cpp');
     const [outputCode, setOutputCode] = useState('')   // ✅ added
     const [displayedCode, setDisplayedCode] = useState('');
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+
+    const { theme } = useTheme();
 
     async function handleConvert(inputCode  /* fromLang */) {
         try {
@@ -71,9 +74,9 @@ function Hero() {
 
     return (
         <>
-            <div className='flex justify-center items-center px-3 sm:px-4 lg:px-0 py-6 sm:py-8 lg:py-0 bg-gray-950'>
+            <div className='flex justify-center items-center px-3 sm:px-4 lg:px-0 py-6 sm:py-8 lg:py-0 bg-background'>
 
-                <div className='
+                <div className={`
                     code-section
                     flex flex-col lg:flex-row
                     justify-evenly items-center lg:items-stretch
@@ -83,9 +86,9 @@ function Hero() {
                     gap-10 sm:gap-12 lg:gap-6 xl:gap-4
                     px-4 sm:px-6 lg:px-8
                     py-6 sm:py-8 lg:py-6
-                    bg-gray-900
+                    ${ theme === "dark" ? "bg-gray-900" : "bg-gray-100 border border-gray-300"} 
                     rounded-3xl sm:rounded-4xl
-                '>
+                `}>
 
                     <CodeInput
                         handleConvert={handleConvert}

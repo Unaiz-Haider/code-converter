@@ -1,6 +1,10 @@
 import React from "react"
+import { useTheme } from "../../context/ThemeContext"
 
 function CodeLangSelect({ selectedLang, setSelectedLang, ballColor = "#a855f7" }) {
+
+    const { theme } = useTheme();
+
     const languages = {
         'Python': 'python',
         'JavaScript': 'javascript',
@@ -93,13 +97,14 @@ function CodeLangSelect({ selectedLang, setSelectedLang, ballColor = "#a855f7" }
                     w-[92px] xs:w-[100px] sm:w-[120px]
                     max-w-full
                     rounded-xl
-                    bg-white/10 backdrop-blur-md text-white 
-                    border border-white/20 shadow-md 
+                    ${ theme === "dark" ? "bg-white/10 text-white" : "bg-white text-black/90 border border-gray-300"} 
+                    backdrop-blur-md   font-semibold
+                    border border-white/10 shadow-md 
                     focus:outline-none focus:ring-2 focus:ring-blue-500/50 
                     hover:border-white/30 transition cursor-pointer text-xs sm:text-sm`}
             >
                 {Object.entries(languages).map(([label, value]) => (
-                    <option key={value} value={value} className="bg-gray-900 text-white text-sm">
+                    <option key={value} value={value} className={` ${ theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-black/90"} text-sm`}>
                         {label}
                     </option>
                 ))}
@@ -107,7 +112,7 @@ function CodeLangSelect({ selectedLang, setSelectedLang, ballColor = "#a855f7" }
             </select>
 
             {/* Custom Arrow */}
-            <div className="pointer-events-none absolute inset-y-0 right-1.5 sm:right-3 flex items-center text-gray-300 text-xs">
+            <div className={`pointer-events-none absolute inset-y-0 right-1.5 sm:right-3 flex items-center ${ theme === "dark" ? "text-gray-300" : "text-black/90" } text-s`}>
                 ▾
             </div>
             
